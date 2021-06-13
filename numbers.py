@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+from tkinter import messagebox
 
 root = Tk()
 root.geometry("500x500")
@@ -8,7 +9,7 @@ root.title("Generate Your Numbers")
 numb_ans = StringVar()
 numb_ent = StringVar()
 mylist = []
-mynewlist = []
+mynewlist = [numb_ent]
 
 ent_numb = Entry(root, textvariable=numb_ent)
 ent_numb.place(x=50, y=25)
@@ -17,12 +18,13 @@ Label(root, textvariable=numb_ans).place(x=50, y=50)
 
 def generate():
     for x in range(1, 11):
-        number = random.randint(1, 60)
+        number = random.randint(1, 3)
         mylist.append(number)
         numb_ans.set(mylist)
-        if x in range > 11:
-            root.terminate()
-
+    if numb_ans == numb_ent.get():
+        messagebox.showinfo("you win", "Weldone")
+    elif numb_ans != numb_ent.get():
+        messagebox.showinfo("you loose", "try again")
 
 
 gen_btn = Button(root, text="Generate", command=generate)
