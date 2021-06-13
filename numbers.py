@@ -17,8 +17,8 @@ Label(root, textvariable=numb_ans).place(x=50, y=50)
 
 
 def generate():
-    for x in range(1, 11):
-        number = random.randint(1, 3)
+    for x in range(1, 2):
+        number = random.randint(1, 2)
         mylist.append(number)
         numb_ans.set(mylist)
     if numb_ans == numb_ent.get():
@@ -29,10 +29,5 @@ def generate():
 
 gen_btn = Button(root, text="Generate", command=generate)
 gen_btn.place(x=50, y=100)
-
-
-
-
-
 
 root.mainloop()
